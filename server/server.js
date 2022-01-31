@@ -9,7 +9,7 @@
 import express from 'express';
 import React from 'react';
 import {renderToString } from 'react-dom/server';
-import Home from './app/src/components/home'
+import Home from '../app/src/components/home'
 import path from 'path'
 
 console.log("server bootstrap")
@@ -19,7 +19,7 @@ console.log("dirname", __dirname)
 //console.log("somewhere", somewhere)
 const frontendServer = express();
 
-frontendServer.use(express.static("public"));
+frontendServer.use(express.static("app/dist"));
 
 
 frontendServer.get('/', (req, res)=>{

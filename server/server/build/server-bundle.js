@@ -7076,7 +7076,7 @@ console.log("dirname", __dirname);
 //console.log("somewhere", somewhere)
 var frontendServer = (0, _express2.default)();
 
-frontendServer.use(_express2.default.static("public"));
+frontendServer.use(_express2.default.static("app/dist"));
 
 frontendServer.get('/', function (req, res) {
         var content = (0, _server.renderToString)(_react2.default.createElement(_home2.default, null));

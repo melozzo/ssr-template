@@ -4,9 +4,9 @@
   "description": "Server side rendering project",
   "main": "index.js",
   "scripts": {
-        "dev:start-server": "nodemon --watch build --exec node ./server/build/server-bundle.js",
-        "dev:build-server": "webpack --config webpack.server-config.js --watch",
-        "dev:build-app": "webpack --config ./app/webpack.app-config.js --watch"
+    "dev:start-server": "nodemon --watch build --exec node ./server/build/server-bundle.js",
+    "dev:build-server": "webpack --config server/webpack.server-config.js --watch",
+    "dev:build-app": "webpack --config ./app/webpack.app-config.js --watch"
   },
   "author": "",
   "license": "ISC",
