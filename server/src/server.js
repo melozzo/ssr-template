@@ -7,13 +7,9 @@
 // change to es2015
 
 import express from 'express';
-import React from 'react';
-import {renderToString } from 'react-dom/server';
-import Home from '../app/src/components/home'
-import path from 'path'
+import Renderer from './renderer'
 
-console.log("server bootstrap")
-console.log("dirname", __dirname)
+console.log("frontend server bootstrap start")
 
 //const somewhere = path.join(__dirname, "../../app/public/app-bundle.js")
 //console.log("somewhere", somewhere)
@@ -21,18 +17,16 @@ const frontendServer = express();
 
 frontendServer.use(express.static("app/dist"));
 
+console.log("static dir is app/dist")
+
+const html = Renderer();
+
 
 frontendServer.get('/', (req, res)=>{
-        const content = renderToString(<Home />);
-// bundle contains everything thats not html
-        const html = `
-                <html><head><body><div id="root">${content}</div>
-                <script src="app-bundle.js"></script>
-                </body></html>
-        `
+       
         res.send(html);
 })
 
 frontendServer.listen(3000, ()=>{
-        console.log("frontend server listening on port 3000")
+        console.log("FRONTEND SERVER LISTENING ON PORT 3000")
 })
