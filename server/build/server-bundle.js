@@ -166,7 +166,7 @@ module.exports = require("react-dom/server");
 
 
 Object.defineProperty(exports, "__esModule", {
-        value: true
+	value: true
 });
 
 var _react = __webpack_require__(2);
@@ -178,22 +178,22 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 // es2015 module syntax
 
 var Home = function Home() {
-        return _react2.default.createElement(
-                "div",
-                null,
-                _react2.default.createElement(
-                        "div",
-                        null,
-                        "Welcome to the sucky home component"
-                ),
-                _react2.default.createElement(
-                        "button",
-                        { onClick: function onClick() {
-                                        return console.log("hi shorty");
-                                } },
-                        "press me "
-                )
-        );
+	return _react2.default.createElement(
+		'div',
+		null,
+		_react2.default.createElement(
+			'div',
+			null,
+			'Welcome to the sucky home component'
+		),
+		_react2.default.createElement(
+			'button',
+			{ onClick: function onClick() {
+					return console.log('hi shorty');
+				} },
+			'press me '
+		)
+	);
 };
 
 exports.default = Home;
