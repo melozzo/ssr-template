@@ -60,17 +60,23 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 0);
+/******/ 	return __webpack_require__(__webpack_require__.s = 1);
 /******/ })
 /************************************************************************/
 /******/ ([
 /* 0 */
+/***/ (function(module, exports) {
+
+module.exports = require("react");
+
+/***/ }),
+/* 1 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var _express = __webpack_require__(1);
+var _express = __webpack_require__(2);
 
 var _express2 = _interopRequireDefault(_express);
 
@@ -106,16 +112,10 @@ frontendServer.listen(3000, function () {
 });
 
 /***/ }),
-/* 1 */
-/***/ (function(module, exports) {
-
-module.exports = require("express");
-
-/***/ }),
 /* 2 */
 /***/ (function(module, exports) {
 
-module.exports = require("react");
+module.exports = require("express");
 
 /***/ }),
 /* 3 */
@@ -128,7 +128,7 @@ Object.defineProperty(exports, "__esModule", {
         value: true
 });
 
-var _react = __webpack_require__(2);
+var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
@@ -166,7 +166,7 @@ Object.defineProperty(exports, "__esModule", {
 	value: true
 });
 
-var _react = __webpack_require__(2);
+var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 

@@ -10,7 +10,7 @@ const  webpackAppConfig = {
   //where to put bundle.js ( __dirname = current working di)
   output: {
     filename: "app-bundle.js",
-    path: path.resolve(__dirname, "public")
+    path: path.resolve(__dirname, "dist")
   },
 
   // tell webpack to use bable to convert to es2015
