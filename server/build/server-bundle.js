@@ -87,25 +87,22 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 // to make this isomorphic - run same code on server and client
 // change to es2015
 
-console.log("frontend server bootstrap start");
+console.log('frontend server bootstrap start');
 
-//const somewhere = path.join(__dirname, "../../app/public/app-bundle.js")
-//console.log("somewhere", somewhere)
 var frontendServer = (0, _express2.default)();
 
-frontendServer.use(_express2.default.static("app/dist"));
+frontendServer.use(_express2.default.static('app/dist'));
 
-console.log("static dir is app/dist");
+console.log('static dir is app/dist');
 
 var html = (0, _renderer2.default)();
 
 frontendServer.get('/', function (req, res) {
-
-        res.send(html);
+	res.send(html);
 });
 
 frontendServer.listen(3000, function () {
-        console.log("FRONTEND SERVER LISTENING ON PORT 3000");
+	console.log('FRONTEND SERVER LISTENING ON PORT 3000');
 });
 
 /***/ }),
