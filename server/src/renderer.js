@@ -1,11 +1,20 @@
 import React from 'react';
 import {renderToString } from 'react-dom/server';
-import Home from './../../app/src/components/home';
+import { StaticRouter } from 'react-router-dom';
+import Routes from './../../shared/routes';
+import {Provider} from 'react-redux';
 
 
-const Renderer = ()=>{
 
-        const content = renderToString(<Home />);
+const Renderer = (req, serverStore)=>{
+
+	const content = renderToString(
+		<Provider store={serverStore}>
+			<StaticRouter location={req.path} context={{}}>
+				<Routes />
+			</StaticRouter>
+		</Provider>
+	);
         // bundle contains everything thats not html
        return `
                 <html><head><body><div id="root">${content}</div>

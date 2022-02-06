@@ -7,6 +7,7 @@
 
 import express from 'express'
 import Renderer from './renderer'
+import ServerStore from './server-store';
 
 console.log('frontend server bootstrap start')
 
@@ -16,10 +17,12 @@ frontendServer.use(express.static('app/dist'))
 
 console.log('static dir is app/dist')
 
-const html = Renderer()
 
-frontendServer.get('/', (req, res) => {
-	res.send(html)
+
+frontendServer.get('*', (req, res) => {
+	const store = ServerStore();
+    const allHTML = Renderer(req, store)
+	res.send(allHTML)
 })
 
 frontendServer.listen(3000, () => {
