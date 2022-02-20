@@ -1,6 +1,8 @@
 
 module.exports = {
 
+	mode: "development", // "production" | "development" | "none"
+
 	module: {
 		rules: [{
 			test: /\.js?$/,
@@ -8,11 +10,7 @@ module.exports = {
 			exclude: /node_modules/,
 			options: {
 				presets: [
-					"react",
-					"stage-0",
-					["env", { 
-						targets: { browser: ["last 2 version"] } 
-					}],
+					'@babel/preset-env', '@babel/preset-react'
 				],
 			},
 		}],

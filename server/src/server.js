@@ -8,20 +8,23 @@
 import express from 'express'
 import Renderer from './renderer'
 import ServerStore from './server-store';
+import ReactDOM from 'react-dom/server'
+import { matchPath } from 'react-router-dom'
+
+
+
+
 
 console.log('frontend server bootstrap start')
 
 const frontendServer = express()
-
 frontendServer.use(express.static('app/dist'))
-
-console.log('static dir is app/dist')
-
 
 
 frontendServer.get('*', (req, res) => {
-	const store = ServerStore();
-    const allHTML = Renderer(req, store)
+	//const store = ServerStore();
+    const allHTML = Renderer(req)
+
 	res.send(allHTML)
 })
 
