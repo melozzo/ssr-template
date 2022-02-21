@@ -5,16 +5,23 @@ import {
 	DELETED_MAP,
 	UPDATED_MAP,
 	IS_EMPTY_MAP,
+	fetchMaps,
+	getLastMap
 } from '../actions/map-actions'
 import lodash from 'lodash'
-import { fetchSites } from '../actions/site-actions'
+
+
+
+const hardCodedDefaultMemberId = 1;
+
 const initialState = {
-	mapList: [],
+	mapList:[],
 	selectedMap: null,
 	emptyMap: false,
 }
 
 function mapReducer(state = initialState, action) {
+	console.log("entered mapReducer")
 	const maps = lodash.cloneDeep(state.mapList)
 	let idx
 	switch (action.type) {

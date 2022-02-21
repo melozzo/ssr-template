@@ -5,25 +5,20 @@
 // to make this isomorphic - run same code on server and client
 // change to es2015
 
-import express from 'express'
-import Renderer from './renderer'
-import ServerStore from './server-store';
-import ReactDOM from 'react-dom/server'
-import { matchPath } from 'react-router-dom'
 
-
-
+import Express from 'express';
+import ServerSideRenderer from './renderer'
 
 
 console.log('frontend server bootstrap start')
+const frontendServer = Express()
 
-const frontendServer = express()
-frontendServer.use(express.static('app/dist'))
+frontendServer.use(Express.static('app/dist'))
 
 
 frontendServer.get('*', (req, res) => {
 	//const store = ServerStore();
-    const allHTML = Renderer(req)
+    const allHTML = ServerSideRenderer(req)
 
 	res.send(allHTML)
 })

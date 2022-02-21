@@ -1,5 +1,6 @@
 import React from 'react';
 import { Route, Routes } from 'react-router-dom'
+import {Helmet} from 'react-helmet'
 // import AuthScreen from './../app/src/screens/AuthScreen';
 // import  AlbumScreen from './../app/src/screens/AlbumScreen';
 // import MapScreen from './../app/src/screens/MapScreen';
@@ -12,6 +13,12 @@ import Home from './../app/src/components/home';
 const RootNavigation = ()=>{
 
 	return (
+		<React.Fragment>
+ <Helmet>
+        <title>App Title</title>
+        <meta name="description" content="not dynamic who cares" />
+        <meta name="theme-color" content="#008f68" />
+      </Helmet>
 
 		<Routes>
 			{/* <Route exact path="/" component = {MapScreen} />
@@ -25,7 +32,7 @@ const RootNavigation = ()=>{
 			
 			</Route>
 		</Routes>
-
+</React.Fragment>
 	)
 }
 
